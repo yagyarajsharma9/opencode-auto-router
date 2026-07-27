@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": ["opencode-auto-router"],
+  "autoRouter": {
+    "fallbackChain": [
+      { "provider": "anthropic", "model": "claude-sonnet-4-20250514", "label": "Claude Sonnet 4", "isFree": true },
+      { "provider": "anthropic", "model": "claude-3-5-haiku-20241022", "label": "Claude Haiku", "isFree": true },
+      { "provider": "openai", "model": "gpt-4o-mini", "label": "GPT-4o Mini", "isFree": false },
+      { "provider": "groq", "model": "llama-3.3-70b-versatile", "label": "Llama 3.3 (Free)", "isFree": true },
+      { "provider": "deepseek", "model": "deepseek-v3", "label": "DeepSeek V3", "isFree": true },
+      { "provider": "google", "model": "gemini-2.5-flash", "label": "Gemini 2.5 Flash", "isFree": true },
+      { "provider": "openrouter", "model": "openai/gpt-4o-mini", "label": "GPT-4o Mini via OpenRouter", "isFree": false }
+    ],
+    "maxRetriesPerSession": 3,
+    "cooldownMs": 5000,
+    "silenceMode": true,
+    "trackUsage": true,
+    "healthCheckIntervalMs": 30000,
+    "autoHeal": true,
+    "minHealthScore": 50
+  }
+}

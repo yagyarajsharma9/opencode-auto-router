@@ -1,0 +1,71 @@
+{
+  "name": "opencode-auto-router",
+  "version": "1.0.0",
+  "description": "Silent auto LLM routing plugin for OpenCode. Automatically fails over to alternative models when free model limits are reached or errors occur, without user intervention.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint src/",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build && npm run lint"
+  },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "llm",
+    "router",
+    "auto",
+    "failover",
+    "rate-limit",
+    "model-routing",
+    "chatgpt",
+    "claude",
+    "gemini",
+    "free-model"
+  ],
+  "author": "opencode-auto-router contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/opencode-auto-router/opencode-auto-router.git"
+  },
+  "bugs": {
+    "url": "https://github.com/opencode-auto-router/opencode-auto-router/issues"
+  },
+  "homepage": "https://github.com/opencode-auto-router/opencode-auto-router#readme",
+  "dependencies": {
+    "@opencode-ai/plugin": "1.18.7",
+    "@opencode-ai/sdk": "1.18.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "oxlint": "1.76.0",
+    "tsx": "^4.23.1",
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.10"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
